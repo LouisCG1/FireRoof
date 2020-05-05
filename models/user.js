@@ -1,5 +1,41 @@
 /* jshint indent: 2 */
 
+/**
+ * @swagger
+ *  tags:
+ *    name: Users
+ *    description: User management
+ */
+
+/**
+ * @swagger
+ *  components:
+ *    schemas:
+ *      User:
+ *        type: object
+ *        required:
+ *          - username
+ *          - email
+ *          - password
+ *          - privilegeLevel
+ *        properties:
+ *          username:
+ *            type: string
+ *          email:
+ *            type: string
+ *            format: email
+ *            uniqueItems: true
+ *          password:
+ *            type: string
+ *            format: password
+ *          privilegeLevel:
+ *            type: integer
+ *        example:
+ *           name: Alexander
+ *           email: fake@email.com
+ *           privilegeLevel: 0
+ */
+
 module.exports = function(sequelize, DataTypes) {
   return sequelize.define('user', {
     id: {
